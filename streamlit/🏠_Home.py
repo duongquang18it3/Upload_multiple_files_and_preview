@@ -17,7 +17,7 @@ def main():
     """
 
     st.markdown(custom_css, unsafe_allow_html=True)
-    base_path = 'F:/Streamlit/streamlit'
+   base_path = os.path.join(os.getcwd(), "streamlit")
 
     if 'uploaded_files' not in st.session_state:
         st.session_state['uploaded_files'] = []
