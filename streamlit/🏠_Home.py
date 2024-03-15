@@ -21,7 +21,7 @@ def main():
 
     # Kiểm tra và khởi tạo danh sách uploaded_files
     if 'uploaded_files' not in st.session_state:
-    st.session_state['uploaded_files'] = []
+        st.session_state['uploaded_files'] = []
 
 
     col1, col2 = st.columns([2, 4])
