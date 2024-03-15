@@ -3,7 +3,9 @@ import streamlit as st
 import pandas as pd
 import json
 import os
-st.set_page_config(layout="wide",page_icon = "🏠")
+
+st.set_page_config(layout="wide", page_icon="🏠")
+
 def main():
     st.sidebar.markdown("# Data preview🎈")
 
@@ -17,14 +19,12 @@ def main():
     """
 
     st.markdown(custom_css, unsafe_allow_html=True)
-   json_file_name = 'sample-json-1.json' if selected_file_index % 2 == 0 else 'sample-json-2.json'
-    json_file_path = os.path.join(os.path.dirname(__file__), json_file_name)
 
+    base_path = os.path.dirname(__file__)
 
     # Kiểm tra và khởi tạo danh sách uploaded_files
     if 'uploaded_files' not in st.session_state:
         st.session_state['uploaded_files'] = []
-
 
     col1, col2 = st.columns([2, 4])
 
