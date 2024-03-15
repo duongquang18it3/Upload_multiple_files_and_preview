@@ -17,10 +17,12 @@ def main():
     """
 
     st.markdown(custom_css, unsafe_allow_html=True)
-   base_path = 'streamlit'
+    base_path = st.secrets["base_path"] if "base_path" in st.secrets else os.getcwd()
 
+    # Kiểm tra và khởi tạo danh sách uploaded_files
     if 'uploaded_files' not in st.session_state:
-        st.session_state['uploaded_files'] = []
+    st.session_state['uploaded_files'] = []
+
 
     col1, col2 = st.columns([2, 4])
 
